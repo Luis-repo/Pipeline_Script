@@ -10,14 +10,14 @@ pipeline{
     }
     stages{
         stage('Example') {
-          //  input {
-          //      message "Should we continue?"
-          //      ok "Yes, we should."
-          //      submitter "alice,bob"
-          //      parameters {
-          //          string(name: 'DIR', defaultValue: 'direccion', description: 'asigna URL?')
-          //      }
-          //  }
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'DIR', defaultValue: 'direccion', description: 'asigna URL?')
+                }
+            }
             steps {
                 echo "URL... ${params.DIR}"
                
