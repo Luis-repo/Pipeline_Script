@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    parameters {
+        string(name: 'DIR', defaultValue: 'URL', description: 'toma el jenkinsFile')
+    }
     tools{
         maven 'M3'
         jdk 'jdk1.8.0_271'
@@ -16,7 +19,7 @@ pipeline{
             }
             steps {
                 echo "URL... ${params.DIR}"
-                echo "Hello ${params.DIR}"
+               
             }
         }
         stage('descargar git'){
