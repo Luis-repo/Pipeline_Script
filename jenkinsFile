@@ -25,6 +25,7 @@ pipeline{
         }
         stage('build'){
             steps{
+             echo "build"
               // bat 'mvn -B clean verify'
               // bat 'mvn -B clean pmd:pmd checkstyle:checkstyle package'
             }
@@ -32,10 +33,12 @@ pipeline{
         stage('guardar artefactos'){
             steps{
                 //archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+                echo "artefact"
             }
         }
         stage('deploy'){
             steps{
+            echo "deploy"
               // deploy adapters: [tomcat8(credentialsId: '9bf271f5-0b79-43c8-84d4-8c3a8679c555', path: '', url: 'http://localhost:8007/')], contextPath: null, war: '**/*.war'
             }
         }
