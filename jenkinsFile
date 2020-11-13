@@ -11,7 +11,7 @@ pipeline{
                 ok "Yes, we should."
                 submitter "alice,bob"
                 parameters {
-                    string(name: 'URL', defaultValue: ' ', description: 'Who should I say hello to?')
+                    string(name: 'URL', defaultValue: 'http://', description: 'asigna URL?')
                 }
             }
             steps {
@@ -39,4 +39,5 @@ pipeline{
                deploy adapters: [tomcat8(credentialsId: '9bf271f5-0b79-43c8-84d4-8c3a8679c555', path: '', url: 'http://localhost:8007/')], contextPath: null, war: '**/*.war'
             }
         }
+    }
     }
