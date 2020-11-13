@@ -21,6 +21,7 @@ pipeline{
         }
         stage('descargar git'){
             steps{
+                 echo "Dowunload GIT"
              //  git '${params.URL}'
             }
         }
