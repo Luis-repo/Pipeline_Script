@@ -11,16 +11,17 @@ pipeline{
                 ok "Yes, we should."
                 submitter "alice,bob"
                 parameters {
-                    string(name: 'URL', defaultValue: 'http://', description: 'asigna URL?')
+                    string(name: 'DIR', defaultValue: 'http://', description: 'asigna URL?')
                 }
             }
             steps {
-                echo "URL, ${params.URL}, ....GIT."
+                echo "URL... ${params.DIR}"
+                echo "Hello ${params.DIR}"
             }
         }
         stage('descargar git'){
             steps{
-               git '${params.URL}'
+             //  git '${params.URL}'
             }
         }
         stage('build'){
