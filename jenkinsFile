@@ -23,20 +23,20 @@ pipeline{
         stage('descargar git'){
             steps{
                  echo "Dowunload GIT"
-             //  git '${params.URL}'
+                 git '${params.DIR}'
             }
         }
         stage('build'){
             steps{
-             echo "build"
+             
               // bat 'mvn -B clean verify'
-              // bat 'mvn -B clean pmd:pmd checkstyle:checkstyle package'
+               bat 'mvn -B clean pmd:pmd checkstyle:checkstyle package'
             }
         }
         stage('guardar artefactos'){
             steps{
-                //archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-                echo "artefact"
+                archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+               
             }
         }
         stage('deploy'){
