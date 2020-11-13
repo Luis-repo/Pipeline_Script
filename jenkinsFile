@@ -15,12 +15,12 @@ pipeline{
                 }
             }
             steps {
-                echo "URL, ${URL}, ....GIT."
+                echo "URL, ${params.URL}, ....GIT."
             }
         }
         stage('descargar git'){
             steps{
-               git '${URL}'
+               git '${params.URL}'
             }
         }
         stage('build'){
